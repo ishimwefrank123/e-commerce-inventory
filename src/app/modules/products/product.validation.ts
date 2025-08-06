@@ -10,7 +10,7 @@ export const inventoryValidationSchema = z.object({
   inStock: z.boolean()
 })
 
-const ProductValidationSchema = z.object({
+const productValidationSchema = z.object({
   name: z.string({
     required_error: "Name is required",
     invalid_type_error: "Name must be a string"
@@ -20,7 +20,7 @@ const ProductValidationSchema = z.object({
   category: z.string(),
   tags: z.array(z.string()),
   variants: z.array(variantValidationSchema),
-  inventory: z.array(inventoryValidationSchema)
+  inventory: inventoryValidationSchema
 })
 
-export default ProductValidationSchema;
+export default productValidationSchema;
