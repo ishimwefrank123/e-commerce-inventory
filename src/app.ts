@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import { ProductRoutes } from './app/modules/products/product.routes';
+import { OrderRoutes } from './app/modules/orders/order.routes';
 const app = express()
 const port = 5000
 
@@ -10,6 +11,8 @@ const port = 5000
 
  //routes
  app.use('/api/products', ProductRoutes)
+  app.use('/api/orders', OrderRoutes)
+
 
 app.get('/', (req,res)=>{
   res.send('Ecommerce Inventory server is running!')
