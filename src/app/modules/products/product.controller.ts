@@ -23,6 +23,16 @@ const createProduct = async (req: Request,res: Response) =>{
   }
 }
 
+const getAllProducts = async (req: Request, res: Response) => {
+  const result = await ProductServices.getProductsFromDB();
+  res.status(201).json({
+    success: true,
+    message: "Products fetched successfully",
+    data: result
+  })
+}
+
 export const ProductControllers = {
-  createProduct
+  createProduct,
+  getAllProducts
 }

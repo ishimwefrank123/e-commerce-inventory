@@ -4,12 +4,12 @@ import { TVariant, type TInventory, type TProduct } from './product.interface'
 const VariantSchema = new Schema<TVariant>({
   type: String,
   value: String,
-})
+},{_id: false})
 
 const InventorySchema = new Schema<TInventory>({
   quantity: Number,
   inStock: Boolean
-})
+},{_id: false})
 
 const ProductSchema = new Schema<TProduct>({
   name: {
