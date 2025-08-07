@@ -12,7 +12,12 @@ const createUser = async (email: string,password: string,role: string)=> {
   return await user.save();
 }
 
+const ValidatePassword = async (inputPassword: string, userPassword: string) => {
+  return bcrypt.compare(inputPassword,userPassword)
+}
+
 export const userServices = {
   findUserByEmail,
-  createUser
+  createUser,
+  ValidatePassword
 }
